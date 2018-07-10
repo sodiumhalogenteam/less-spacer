@@ -1,0 +1,66 @@
+@spacers: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100, 150, 200;
+
+// Margin
+.generate-margin-utilities(@i: 1) when (@i <= length(@spacers)) {
+  @n: extract(@spacers, @i);
+
+  .mt-@{n} {
+    margin-top: ~"@{n}px";
+  }
+  .mr-@{n} {
+    margin-right: ~"@{n}px";
+  }
+  .mb-@{n} {
+    margin-bottom: ~"@{n}px";
+  }
+  .ml-@{n} {
+    margin-left: ~"@{n}px";
+  }
+  .my-@{n} {
+    margin-top: ~"@{n}px";
+    margin-bottom: ~"@{n}px";
+  }
+  .mx-@{n} {
+    margin-right: ~"@{n}px";
+    margin-left: ~"@{n}px";
+  }
+  .m-@{n} {
+    margin: ~"@{n}px";
+  }
+  .generate-margin-utilities((@i + 1));
+}
+
+.generate-margin-utilities();
+
+// Padding
+.generate-padding-utilities(@i: 1) when (@i <= length(@spacers)) {
+  @n: extract(@spacers, @i);
+
+  .pt-@{n} {
+    padding-top: ~"@{n}px !important";
+  }
+  .pr-@{n} {
+    padding-right: ~"@{n}px !important";
+  }
+  .pb-@{n} {
+    padding-bottom: ~"@{n}px !important";
+  }
+  .pl-@{n} {
+    padding-left: ~"@{n}px !important";
+  }
+  .py-@{n} {
+    padding-top: ~"@{n}px !important";
+    padding-bottom: ~"@{n}px !important";
+  }
+  .px-@{n} {
+    padding-right: ~"@{n}px !important";
+    padding-left: ~"@{n}px !important";
+  }
+  .p-@{n} {
+    padding: ~"@{n}px !important";
+  }
+
+  .generate-padding-utilities((@i + 1));
+}
+
+.generate-padding-utilities();
